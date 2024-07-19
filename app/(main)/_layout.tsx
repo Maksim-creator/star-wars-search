@@ -20,14 +20,20 @@ import {
   AnimatedText,
   ActivityIndicator,
 } from "@/components";
+import i18n from "@/i18n";
+
+const t = i18n.withScope("MainScreen");
 
 export default function MainLayout() {
   const insets = useSafeAreaInsets();
   const dispatch = useAppDispatch();
   const people = useAppSelector((state) => state.people);
+  const flatListRef = useRef<FlatList>(null);
 
   const animatedValues = useRef(
-    "AllianceBook".split("").map(() => new Animated.Value(0)),
+    t("title")
+      .split("")
+      .map(() => new Animated.Value(0)),
   ).current;
 
   const [term, setTerm] = useState("");
@@ -56,6 +62,7 @@ export default function MainLayout() {
 
   const debouncedSearch = useCallback(
     debounce((searchQuery) => {
+      flatListRef.current?.scrollToOffset({ animated: true, offset: 0 });
       dispatch(getCharacters({ search: searchQuery, page: 1 }));
     }, 300),
     [dispatch],
@@ -82,10 +89,10 @@ export default function MainLayout() {
   }, [people.charactersData?.next, dispatch, people.charactersMoreLoading]);
 
   const ListFooterComponent = useCallback(() => {
+    if (!people.charactersData?.next) return;
+
     return (
-      <View
-        className={`w-full justify-center items-center h-${people.charactersData?.next ? 16 : 0}`}
-      >
+      <View className={`w-full justify-center items-center h-20`}>
         {people.charactersMoreLoading && <ActivityIndicator />}
       </View>
     );
@@ -97,9 +104,7 @@ export default function MainLayout() {
         style={{ height: Dimensions.get("screen").height / 2 }}
         className="justify-center items-center"
       >
-        <Text className="font-bold text-lg">
-          There is no characters for that term 😞
-        </Text>
+        <Text className="font-bold text-lg">{t("empty_search")}</Text>
       </View>
     );
   }, []);
@@ -112,23 +117,26 @@ export default function MainLayout() {
     <SafeAreaView className="flex-1" edges={["top"]}>
       <View className="px-4 flex-1">
         <View className="flex-row">
-          {"AllianceBook".split("").map((char, index) => (
-            <AnimatedText
-              key={`${char}-${index}`}
-              className="font-bold text-2xl"
-              style={[{ opacity: animatedValues[index] }]}
-            >
-              {char}
-            </AnimatedText>
-          ))}
+          {t("title")
+            .split("")
+            .map((char, index) => (
+              <AnimatedText
+                key={`${char}-${index}`}
+                className="font-bold text-2xl"
+                style={[{ opacity: animatedValues[index] }]}
+              >
+                {char}
+              </AnimatedText>
+            ))}
         </View>
         <TextInput
-          placeholder="Search some characters..."
+          placeholder={t("search_placeholder")}
           className="border border-gray-400 rounded-lg py-3 px-4 mt-4 mb-3 bg-white"
           value={term}
           onChangeText={handleChange}
         />
         <FlatList
+          ref={flatListRef}
           data={people.charactersData?.results}
           renderItem={renderItem}
           keyExtractor={keyExtractor}

@@ -1,0 +1,7 @@
+{
+  "MainScreen": {
+    "title": "AllianceBook",
+    "empty_search": "There is no characters for that term \uD83D\uDE1E",
+    "search_placeholder": "Search some characters..."
+  }
+}
