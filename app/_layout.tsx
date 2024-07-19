@@ -1,10 +1,11 @@
 import "react-native-reanimated";
 import { Stack } from "expo-router";
-import { store } from "@/store";
 import { Provider } from "react-redux";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "@/store";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -26,9 +27,11 @@ export default function RootLayout() {
 
   return (
     <Provider store={store}>
-      <Stack>
-        <Stack.Screen name="(main)" options={{ headerShown: false }} />
-      </Stack>
+      <PersistGate persistor={persistor} loading={null}>
+        <Stack>
+          <Stack.Screen name="(main)" options={{ headerShown: false }} />
+        </Stack>
+      </PersistGate>
     </Provider>
   );
 }

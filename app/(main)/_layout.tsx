@@ -52,7 +52,10 @@ export default function MainLayout() {
   }, [animatedValues]);
 
   useEffect(() => {
-    dispatch(getCharacters({ page: 1 }));
+    if (!people.charactersData?.results.length) {
+      dispatch(getCharacters({ page: 1 }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   const renderItem: ListRenderItem<Character> = useCallback(
