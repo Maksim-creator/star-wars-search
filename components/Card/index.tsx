@@ -1,6 +1,15 @@
 import React, { useMemo } from "react";
+import {
+  Text as TextBase,
+  View as ViewBase,
+  Image as ImageBase,
+} from "react-native";
+import { styled } from "nativewind";
 import { Character } from "@/store/people/entities";
-import { View, Image, Text } from "@/components";
+
+const View = styled(ViewBase);
+const Text = styled(TextBase);
+const Image = styled(ImageBase);
 
 interface Props {
   character: Character;
@@ -9,7 +18,9 @@ interface Props {
 export const Card: React.FC<Props> = ({ character }) => {
   const eyeColors = useMemo(() => {
     if (character.eye_color !== "unknown") {
-      return character.eye_color.split("-");
+      return character.eye_color.includes("-")
+        ? character.eye_color.split("-")
+        : character.eye_color.split(",");
     }
     return undefined;
   }, [character.eye_color]);
@@ -41,7 +52,7 @@ export const Card: React.FC<Props> = ({ character }) => {
                     key={color}
                     className="h-3 w-3 rounded-full"
                     style={{
-                      backgroundColor: color,
+                      backgroundColor: color.trim(),
                       shadowColor: color,
                       shadowRadius: 2,
                       shadowOpacity: 0.3,
