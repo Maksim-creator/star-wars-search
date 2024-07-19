@@ -1,6 +1,7 @@
 import baseApi from "@/api";
+import { GetCharactersPayload } from "@/store/people/entities";
 
 export default {
-  getPeople: (page: number | undefined = 1, search: string | undefined = "") =>
-    baseApi.get(`people/?search=${search}&page=${page}`),
+  getPeople: (payload: GetCharactersPayload) =>
+    baseApi.get(`people/?search=${payload.search || ""}&page=${payload.page}`),
 };

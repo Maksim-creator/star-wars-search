@@ -26,4 +26,6 @@ export interface GetCharactersResponse {
 
 export interface GetCharactersPayload {
   isRefreshing?: boolean;
+  page?: number;
+  search?: string;
 }
