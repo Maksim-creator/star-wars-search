@@ -7,10 +7,10 @@ import {
 
 export const getCharacters = createAsyncThunk<
   GetCharactersResponse,
-  GetCharactersPayload | undefined
->("people/getCharacters", async (_, { rejectWithValue }) => {
+  GetCharactersPayload
+>("people/getCharacters", async (payload, { rejectWithValue }) => {
   try {
-    const response = await people.getPeople();
+    const response = await people.getPeople(payload);
     return response.data;
   } catch (e) {
     return rejectWithValue(e);

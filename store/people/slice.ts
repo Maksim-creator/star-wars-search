@@ -7,6 +7,7 @@ interface InitialState {
   charactersLoading?: boolean;
   charactersRefreshing: boolean;
   charactersError?: boolean;
+  charactersMoreLoading?: boolean;
 }
 
 const initialState: InitialState = {
@@ -21,6 +22,8 @@ const peopleSlice = createSlice({
     builder.addCase(getCharacters.pending, (state, action) => {
       if (action.meta.arg?.isRefreshing) {
         state.charactersRefreshing = true;
+      } else if (action.meta.arg.page) {
+        state.charactersMoreLoading = true;
       } else {
         state.charactersLoading = true;
       }
@@ -28,11 +31,23 @@ const peopleSlice = createSlice({
     builder.addCase(getCharacters.fulfilled, (state, action) => {
       state.charactersLoading = false;
       state.charactersRefreshing = false;
-      state.charactersData = action.payload;
+      state.charactersMoreLoading = false;
+      if (action.meta.arg.page && state.charactersData) {
+        state.charactersData.next = action.payload.next;
+        state.charactersData.count = action.payload.count;
+        state.charactersData.previous = action.payload.previous;
+        state.charactersData.results = [
+          ...state.charactersData.results,
+          ...action.payload.results,
+        ];
+      } else {
+        state.charactersData = action.payload;
+      }
     });
     builder.addCase(getCharacters.rejected, (state) => {
       state.charactersLoading = false;
       state.charactersRefreshing = false;
+      state.charactersMoreLoading = false;
     });
   },
 });

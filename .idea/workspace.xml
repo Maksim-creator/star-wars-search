@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d2de56-5d4b-4d3c-8094-e74b4a204bee" name="Changes" comment="Use eslint. Add api to get the data. Create &quot;Card&quot; component. Add fonts">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/people/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(main)/_layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/fonts/OpenSans-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Card.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constants/Config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/people/entities.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/people/slice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/people/thunk.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/+html.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/+html.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expo-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/people/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/people/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/thunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="add-api-flow-and-base-components" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,20 +36,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "add-api-flow-and-base-components",
-    "last_opened_file_path": "/Users/maksim/WebstormProjects/star-wars-search/assets/fonts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "npm.lint.executor": "Run",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/Users/maksim/WebstormProjects/star-wars-search/node_modules/typescript/lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/maksim/WebstormProjects/star-wars-search/assets/fonts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/maksim/WebstormProjects/star-wars-search/node_modules/typescript/lib&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/fonts" />
