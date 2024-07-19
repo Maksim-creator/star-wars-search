@@ -1,48 +1,40 @@
 import React, { useMemo } from "react";
-import { styled } from "nativewind";
-import {
-  Image as ImageBase,
-  Text as TextBase,
-  View as ViewBase,
-} from "react-native";
 import { Character } from "@/store/people/entities";
-
-const View = styled(ViewBase);
-const Text = styled(TextBase);
-const Image = styled(ImageBase);
+import { View, Image, Text } from "@/components";
 
 interface Props {
-  item: Character;
-  index: number;
+  character: Character;
 }
 
-export const Card: React.FC<Props> = ({ item, index }) => {
+export const Card: React.FC<Props> = ({ character }) => {
   const eyeColors = useMemo(() => {
-    if (item.eye_color !== "unknown") {
-      return item.eye_color.split("-");
+    if (character.eye_color !== "unknown") {
+      return character.eye_color.split("-");
     }
     return undefined;
-  }, [item.eye_color]);
+  }, [character.eye_color]);
 
   return (
     <View className="flex-row bg-white rounded-lg shadow-sm">
       <Image
         source={{
-          uri: `https://starwars-visualguide.com/assets/img/characters/${index + 1}.jpg`,
+          uri: `https://starwars-visualguide.com/assets/img/characters/${character.url.match(/\/([0-9]*)\/$/)![1]}.jpg`,
         }}
         className="w-[110px] h-[150px] rounded-l-lg"
         resizeMode="contain"
       />
       <View className="py-2 px-2">
-        <Text className="font-bold text-lg">{item.name}</Text>
-        {item.birth_year !== "unknown" ? (
-          <Text className="font-regular text-sm">{item.birth_year}</Text>
+        <Text className="font-bold text-lg">{character.name}</Text>
+        {character.birth_year !== "unknown" ? (
+          <Text className="font-regular text-sm">{character.birth_year}</Text>
         ) : null}
         <View className="pt-1">
-          <Text className="font-regular">Gender: {item.gender}</Text>
+          <Text className="font-regular">Gender: {character.gender}</Text>
           {eyeColors && (
             <View className="flex-row items-center gap-2">
-              <Text className="font-regular">Eye color: {item.eye_color}</Text>
+              <Text className="font-regular">
+                Eye color: {character.eye_color}
+              </Text>
               <View className="flex-row gap-x-1 items-center">
                 {eyeColors.map((color) => (
                   <View
@@ -60,7 +52,7 @@ export const Card: React.FC<Props> = ({ item, index }) => {
               </View>
             </View>
           )}
-          <Text className="font-regular">Height: {item.height}</Text>
+          <Text className="font-regular">Height: {character.height}</Text>
         </View>
       </View>
     </View>

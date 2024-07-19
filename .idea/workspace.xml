@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d2de56-5d4b-4d3c-8094-e74b4a204bee" name="Changes" comment="Use eslint. Add api to get the data. Create &quot;Card&quot; component. Add fonts">
+      <change afterPath="$PROJECT_DIR$/components/Card/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/people/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/people/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(main)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expo-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expo-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/people/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/entities.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/people/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/slice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/people/thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/people/thunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +77,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.lint" />
+        <item itemvalue="npm.lint" />
       </list>
     </recent_temporary>
   </component>
@@ -117,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721400885536</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implement pagination">
+      <option name="closed" value="true" />
+      <created>1721404026296</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721404026296</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +150,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Clean the app. Install necessary libs" />
     <MESSAGE value="Use eslint. Add api to get the data. Create &quot;Card&quot; component. Add fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use eslint. Add api to get the data. Create &quot;Card&quot; component. Add fonts" />
+    <MESSAGE value="Implement pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement pagination" />
   </component>
 </project>
