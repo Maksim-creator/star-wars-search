@@ -12,6 +12,7 @@ interface InitialState {
 
 const initialState: InitialState = {
   charactersRefreshing: false,
+  charactersLoading: true,
 };
 
 const peopleSlice = createSlice({
@@ -20,6 +21,7 @@ const peopleSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getCharacters.pending, (state, action) => {
+      if (action.meta.arg.search) return;
       if (action.meta.arg?.isRefreshing) {
         state.charactersRefreshing = true;
       } else if (action.meta.arg.page) {
@@ -32,18 +34,25 @@ const peopleSlice = createSlice({
       state.charactersLoading = false;
       state.charactersRefreshing = false;
       state.charactersMoreLoading = false;
-      if (action.meta.arg.page && state.charactersData) {
-        state.charactersData.next = action.payload.next;
-        state.charactersData.count = action.payload.count;
-        state.charactersData.previous = action.payload.previous;
+
+      const { search, isRefreshing, isLoadingMore } = action.meta.arg;
+
+      if (search || isRefreshing) {
+        state.charactersData = action.payload;
+      } else if (isLoadingMore && state.charactersData) {
+        const { next, count, previous, results } = action.payload;
+        state.charactersData.next = next;
+        state.charactersData.count = count;
+        state.charactersData.previous = previous;
         state.charactersData.results = [
           ...state.charactersData.results,
-          ...action.payload.results,
+          ...results,
         ];
       } else {
         state.charactersData = action.payload;
       }
     });
+
     builder.addCase(getCharacters.rejected, (state) => {
       state.charactersLoading = false;
       state.charactersRefreshing = false;
