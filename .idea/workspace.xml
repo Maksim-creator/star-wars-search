@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="77d2de56-5d4b-4d3c-8094-e74b4a204bee" name="Changes" comment="Update translations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/people/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/characters/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(main)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/_layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expo-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expo-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i18n/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/translations/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/entities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/characters/entities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/slice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/characters/slice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/people/thunk.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/characters/thunk.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;update-dict&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update-slice&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/maksim/WebstormProjects/star-wars-search/assets/fonts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -70,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.lint" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.lint" />
         <item itemvalue="npm.lint" />
@@ -142,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721430182052</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update translations">
+      <option name="closed" value="true" />
+      <created>1721472919232</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721472919232</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

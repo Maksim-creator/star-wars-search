@@ -3,16 +3,16 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { persistReducer, persistStore } from "redux-persist";
-import { reducer as people } from "./people/slice";
+import { reducer as characters } from "@/store/characters/slice";
 
 export const rootReducer = combineReducers({
-  people,
+  characters,
 });
 
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: ["people"],
+  whitelist: ["characters"],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

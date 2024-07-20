@@ -5,7 +5,7 @@ import {
   Image as ImageBase,
 } from "react-native";
 import { styled } from "nativewind";
-import { Character } from "@/store/people/entities";
+import { Character } from "@/store/characters/entities";
 import i18n from "@/i18n";
 
 const View = styled(ViewBase);
