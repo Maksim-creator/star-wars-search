@@ -9,8 +9,8 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import debounce from "lodash.debounce";
 import { useAppDispatch, useAppSelector } from "@/store";
-import { getCharacters } from "@/store/people/thunk";
-import { Character } from "@/store/people/entities";
+import { getCharacters } from "@/store/characters/thunk";
+import { Character } from "@/store/characters/entities";
 import {
   Card,
   Text,
@@ -27,7 +27,7 @@ const t = i18n.withScope("MainScreen");
 export default function MainLayout() {
   const insets = useSafeAreaInsets();
   const dispatch = useAppDispatch();
-  const people = useAppSelector((state) => state.people);
+  const characters = useAppSelector((state) => state.characters);
   const flatListRef = useRef<FlatList>(null);
 
   const animatedValues = useRef(
@@ -52,7 +52,7 @@ export default function MainLayout() {
   }, [animatedValues]);
 
   useEffect(() => {
-    if (!people.charactersData?.results.length) {
+    if (!characters.charactersData?.results.length) {
       dispatch(getCharacters({ page: 1 }));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -84,22 +84,26 @@ export default function MainLayout() {
   }, [dispatch]);
 
   const onEndReached = useCallback(() => {
-    if (people.charactersData?.next && !people.charactersMoreLoading) {
-      const splittedLink = people.charactersData.next.split("=");
+    if (characters.charactersData?.next && !characters.charactersMoreLoading) {
+      const splittedLink = characters.charactersData.next.split("=");
       const page = splittedLink[splittedLink.length - 1];
       dispatch(getCharacters({ page: parseInt(page), isLoadingMore: true }));
     }
-  }, [people.charactersData?.next, dispatch, people.charactersMoreLoading]);
+  }, [
+    characters.charactersData?.next,
+    dispatch,
+    characters.charactersMoreLoading,
+  ]);
 
   const ListFooterComponent = useCallback(() => {
-    if (!people.charactersData?.next) return;
+    if (!characters.charactersData?.next) return;
 
     return (
       <View className={`w-full justify-center items-center h-20`}>
-        {people.charactersMoreLoading && <ActivityIndicator />}
+        {characters.charactersMoreLoading && <ActivityIndicator />}
       </View>
     );
-  }, [people.charactersMoreLoading, people.charactersData?.next]);
+  }, [characters.charactersMoreLoading, characters.charactersData?.next]);
 
   const ListEmptyComponent = useCallback(() => {
     return (
@@ -112,7 +116,7 @@ export default function MainLayout() {
     );
   }, []);
 
-  if (people.charactersLoading) {
+  if (characters.charactersLoading) {
     return <ActivityIndicator className="flex-1" />;
   }
 
@@ -140,11 +144,11 @@ export default function MainLayout() {
         />
         <FlatList
           ref={flatListRef}
-          data={people.charactersData?.results}
+          data={characters.charactersData?.results}
           renderItem={renderItem}
           keyExtractor={keyExtractor}
           showsVerticalScrollIndicator={false}
-          refreshing={people.charactersRefreshing}
+          refreshing={characters.charactersRefreshing}
           onRefresh={onRefresh}
           keyboardShouldPersistTaps="never"
           onScrollBeginDrag={Keyboard.dismiss}

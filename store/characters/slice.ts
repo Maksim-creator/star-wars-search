@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { GetCharactersResponse } from "./entities";
-import { getCharacters } from "@/store/people/thunk";
+import { getCharacters } from "@/store/characters/thunk";
 
 interface InitialState {
   charactersData?: GetCharactersResponse;
@@ -15,8 +15,8 @@ const initialState: InitialState = {
   charactersLoading: true,
 };
 
-const peopleSlice = createSlice({
-  name: "people",
+const charactersSlice = createSlice({
+  name: "characters",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -61,4 +61,4 @@ const peopleSlice = createSlice({
   },
 });
 
-export const { reducer } = peopleSlice;
+export const { reducer } = charactersSlice;
