@@ -2,6 +2,9 @@
   "MainScreen": {
     "title": "AllianceBook",
     "empty_search": "There is no characters for that term \uD83D\uDE1E",
-    "search_placeholder": "Search some characters..."
+    "search_placeholder": "Search some characters...",
+    "gender_text": "Gender",
+    "eye_color_text": "Eye color",
+    "height_text": "Height"
   }
 }

@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77d2de56-5d4b-4d3c-8094-e74b4a204bee" name="Changes" comment="add i18next translations. minor updates">
+    <list default="true" id="77d2de56-5d4b-4d3c-8094-e74b4a204bee" name="Changes" comment="Update translations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(main)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(main)/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Card/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Card/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expo-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/expo-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i18n/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/i18n/translations/en.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +18,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="add-i18next" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,7 +36,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;update-dict&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/maksim/WebstormProjects/star-wars-search/assets/fonts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
@@ -168,6 +165,7 @@
     <MESSAGE value="Implement pagination" />
     <MESSAGE value="Implement search" />
     <MESSAGE value="add i18next translations. minor updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="add i18next translations. minor updates" />
+    <MESSAGE value="Update translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update translations" />
   </component>
 </project>

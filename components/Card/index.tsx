@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { styled } from "nativewind";
 import { Character } from "@/store/people/entities";
+import i18n from "@/i18n";
 
 const View = styled(ViewBase);
 const Text = styled(TextBase);
@@ -14,6 +15,8 @@ const Image = styled(ImageBase);
 interface Props {
   character: Character;
 }
+
+const t = i18n.withScope("MainScreen");
 
 export const Card: React.FC<Props> = ({ character }) => {
   const eyeColors = useMemo(() => {
@@ -40,11 +43,15 @@ export const Card: React.FC<Props> = ({ character }) => {
           <Text className="font-regular text-sm">{character.birth_year}</Text>
         ) : null}
         <View className="pt-1">
-          <Text className="font-regular">Gender: {character.gender}</Text>
+          <Text className="font-regular">
+            <Text className="font-bold">{t("gender_text")}:</Text>{" "}
+            {character.gender}
+          </Text>
           {eyeColors && (
             <View className="flex-row items-center gap-2">
               <Text className="font-regular">
-                Eye color: {character.eye_color}
+                <Text className="font-bold">{t("eye_color_text")}:</Text>{" "}
+                {character.eye_color}
               </Text>
               <View className="flex-row gap-x-1 items-center">
                 {eyeColors.map((color) => (
@@ -63,7 +70,10 @@ export const Card: React.FC<Props> = ({ character }) => {
               </View>
             </View>
           )}
-          <Text className="font-regular">Height: {character.height}</Text>
+          <Text className="font-regular">
+            <Text className="font-bold">{t("height_text")}:</Text>{" "}
+            {character.height}
+          </Text>
         </View>
       </View>
     </View>
